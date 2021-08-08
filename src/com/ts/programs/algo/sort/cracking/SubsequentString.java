@@ -3,13 +3,14 @@ package com.ts.programs.algo.sort.cracking;
 /*
 Subsequence String: Given two strings s and t, return true if s is a subsequence of  t, or false otherwise.
 
+Optimization: if any one charcter not matching in t string, break the loop
  */
 public class SubsequentString {
 
     public static void main(String[] args) {
 
         String t = "abcde";
-        String s = "abcf";
+        String s = "abc";
         System.out.println(isSubsequent(t,s));
     }
 
@@ -17,9 +18,9 @@ public class SubsequentString {
 
 
         int index = 0;
-        for (int i = 0; i < t.length(); i++){
+        for (int i = 0; i < s.length(); i++){
 
-           if(t.charAt(i) == s.charAt(index)) {
+           if(t.charAt(index) == s.charAt(i)) {
                index++;
            }
 
