@@ -10,6 +10,11 @@ public class MissingNumber {
 
         int[] array = {0,1,2,3};
 
+        // 0,1,2,3,4  = 10
+        // 6
+        // 0 - miss , 1 - miss, 2 - miss, 3 - miss, 4 - miss
+
+
         int missedNum = missingNumber(array);
 
         System.out.println(missedNum);

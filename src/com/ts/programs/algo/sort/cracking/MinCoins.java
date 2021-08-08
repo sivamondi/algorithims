@@ -7,6 +7,9 @@ public class MinCoins {
 Return the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return -1.
 You may assume that you have an infinite number of each kind of coin.
 
+Optimization:
+
+
      */
 
     public static void main(String[] args) {

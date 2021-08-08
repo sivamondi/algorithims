@@ -3,12 +3,15 @@ package com.ts.programs.algo.sort.cracking;
 /*
 Longest common prefix: Write a function to find the longest common prefix string amongst an array of strings.
 
+// Optimize
+
+
  */
 public class LongestCommonPrefix {
 
     public static void main(String[] args) {
 
-        String[] strs = {"kaabcd", "abcde", "abcdef"};
+        String[] strs = {"aabcd", "abcde", "abcdef"};
 
         String prefix = getLongestCommonPrefix(strs);
 
@@ -37,8 +40,6 @@ public class LongestCommonPrefix {
             }
 
             longestCommonPrefix = longestCommonPrefix + c;
-
-
 
         }
 

@@ -1,16 +1,23 @@
 package com.ts.programs.algo.sort.cracking;
 
+import java.util.AbstractCollection;
+
 /**
  * A message containing letters from A-Z can be encoded into numbers using the following mapping:
  * 'A' -> "1"
  * 'B' -> "2"
  * ...
  * 'Z' -> "26"
+ *
+ * // Optimize:
+ *
  */
 public class DecodeAMessage {
     public static void main(String[] args) {
 
-        String s = "12";
+        String s = "123";
+
+
 
         int ways = waysToDecode(s);
 

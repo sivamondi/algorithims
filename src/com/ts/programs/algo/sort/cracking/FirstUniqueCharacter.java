@@ -8,10 +8,11 @@ import java.util.Set;
 /**
 
  *  Optimizing
+ *
  */
 public class FirstUniqueCharacter {
     public static void main(String[] args) {
-        String a = "abba";
+        String a = "Abbac";
         int index = uniqueCharIndex(a);
 
         System.out.println("match="+index);
