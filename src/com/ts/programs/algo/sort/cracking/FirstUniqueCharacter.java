@@ -11,7 +11,7 @@ import java.util.Set;
  */
 public class FirstUniqueCharacter {
     public static void main(String[] args) {
-        String a = "abac";
+        String a = "abba";
         int index = uniqueCharIndex(a);
 
         System.out.println("match="+index);
