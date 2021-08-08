@@ -4,9 +4,9 @@ import java.util.Arrays;
 
 public class InsertionSort {
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
 
-        int inputArray[] = {5,2,4,6,1,3,8,10,7};
+        int inputArray[] = {5,2,4,6,1};
 
         // print before sorting
         System.out.println("Unsorted Values..:"+Arrays.toString(inputArray));
