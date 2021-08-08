@@ -4,7 +4,7 @@ package com.ts.programs.algo.sort.cracking;
  *
  *  Optimizing
  *  1) If the word is already starting with upper case no need to substring
- *  2) using regular expression retrieve all the worlds which are not statring capital letters and change only those
+ *  2) using regular expression retrieve all the worlds which are not staring capital letters and change only those
  */
 public class Capitalize {
     public static void main(String[] args) {
