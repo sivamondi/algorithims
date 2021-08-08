@@ -11,11 +11,11 @@ You may assume that you have an infinite number of each kind of coin.
 
     public static void main(String[] args) {
 
-        int[] coins = {25, 10, 1};
+        int[] coins = {1, 2, 10, 25};
 
-        int ways = fewestNumberOfCoins(5, coins);
+        int fewCoins = fewestNumberOfCoins(4, coins);
 
-        System.out.println("ways..." + ways);
+        System.out.println("few coins..." + fewCoins);
 
     }
 

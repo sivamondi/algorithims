@@ -9,26 +9,41 @@ public class CoinChangeWays {
 
     public static void main(String[] args) {
 
-        int[] coins = {25, 10, 5, 1};
+        int[] coins = {1, 2, 5};
+        int amount = 5;
 
-        int ways =  getWaysOfChange(5, coins, 0);
+        int[][] map = new int[amount+ 1][coins.length];
+
+        int ways =  numberOfWays(amount, coins);
 
         System.out.println("ways..."+ways);
 
     }
 
-    public static int getWaysOfChange(int amount, int[] coins, int index) {
-        if (index >= coins.length - 1) {
-            return 1;
+    public static int numberOfWays(int amount, int[] coins) {
+
+        int[][] dpArray = new int[amount + 1][1];
+
+        // fill array with default values, larger than amount
+        for (int i = 0; i < dpArray.length; i++) {
+            dpArray[i][0] = -1;
         }
 
-        int denomination = coins[index];
-        int ways = 0;
+        // minimum coins required to fill zero coins are zero
+        dpArray[0][0] = 0;
 
-        for (int i= 0; i * denomination <= amount; i++) {
-            int amountRemaining = amount - i * denomination;
-            ways += getWaysOfChange(amountRemaining, coins, index + 1);
+
+        for (int i = 0; i < coins.length; i++) {
+            for (int j = 0; j <= amount; j++) {
+                if (coins[i] <= j) {
+
+                    int ways = Math.max(dpArray[j][0], dpArray[j - coins[i]][0]);
+
+                    dpArray[j][0] = ways;
+                }
+            }
         }
-        return ways;
+
+        return dpArray[amount][0] == Integer.MAX_VALUE ? -1 : dpArray[amount][0];
     }
 }
