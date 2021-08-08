@@ -12,19 +12,19 @@ public class Palindrome {
     }
 
     public static boolean isPalindrome(String s) {
-        int i = 0;
-        int j = s.length() - 1;
+        int lo = 0;
+        int hi = s.length() - 1;
 
-        while (i < j) {
-            while (i < j && !Character.isLetterOrDigit(s.charAt(i))) {
-                i++;
+        while (lo < hi) {
+            while (lo < hi && !Character.isLetterOrDigit(s.charAt(lo))) {
+                lo++;
             }
 
-            while (i < j && !Character.isLetterOrDigit(s.charAt(j))) {
-                j--;
+            while (lo < hi && !Character.isLetterOrDigit(s.charAt(hi))) {
+                hi--;
             }
 
-            if (i < j && Character.toLowerCase(s.charAt(i++)) != Character.toLowerCase(s.charAt(j--))) {
+            if (lo < hi && Character.toLowerCase(s.charAt(lo++)) != Character.toLowerCase(s.charAt(hi--))) {
                 return  false;
             }
         }
