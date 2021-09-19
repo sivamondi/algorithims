@@ -26,7 +26,7 @@ public class MissingNumber {
         int expectedSum = 0;
         for(int i = 0; i<array.length; i++) {
             arraySum = arraySum +  array[i];
-            expectedSum = expectedSum + (i+1);
+            expectedSum = expectedSum + (i);
         }
 
         return expectedSum - arraySum;
