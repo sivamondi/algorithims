@@ -1,50 +1,45 @@
 package com.ts.programs.algo.sort.cracking;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Stack;
 
-/*
-Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
-
- */
 public class Paranthesis {
 
     public static void main(String[] args) {
+        String s = "()[]{}";
+        Stack<Character> stack = new Stack<>();
+        char[] chars = s.toCharArray();
 
-        int i = 10;
+        for (char c: chars) {
+            if(c == '(' || c == '[' || c == '{' ) {
+                stack.push(c);
+                continue;
+            }
 
-        List<String> s = generateParenthesis(i);
+            if (c== ')') {
+                if(stack.empty() || stack.pop() != '(') {
+                    System.out.println(false);
+                    return;
+                }
+            }
 
-        for(String s1: s ) {
-            System.out.println(s1);
+            if (c== '}') {
+                if(stack.empty() || stack.pop() != '{') {
+                    System.out.println(false);
+                    return;
+                }
+            }
+
+            if (c== ']') {
+                if(stack.empty() || stack.pop() != '[') {
+                    System.out.println(false);
+                    return;
+                }
+            }
+
+
         }
-    }
 
-    public static  List<String> generateParenthesis(int n) {
-        List<String> result = new ArrayList<>();
-        dfs(result, "", n, n);
-        return result;
-    }
+        System.out.println(true);
 
-    /*
-left and right represents the remaining number of ( and ) that need to be added.
-When left > right, there are more ")" placed than "(". Such cases are wrong and the method stops.
-*/
-    public static void dfs(List<String> result, String s, int left, int right){
-        if(left > right)
-            return;
-
-        if(left==0&&right==0){
-            result.add(s);
-            return;
-        }
-
-        if(left>0){
-            dfs(result, s+"(", left-1, right);
-        }
-
-        if(right>0){
-            dfs(result, s+")", left, right-1);
-        }
     }
 }

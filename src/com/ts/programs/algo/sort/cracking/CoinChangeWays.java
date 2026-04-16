@@ -5,7 +5,8 @@ import java.util.Arrays;
 public class CoinChangeWays {
 
     /*
-    Given an infinite number of quarters (25 cents), dimes (1O cents), nickels (5 cents), and pennies (1 cent),
+    Given an infinite number of quarters (25 cents),
+    dimes (1O cents), nickels (5 cents), and pennies (1 cent),
     write code to calculate the number of ways of representing n cents.
 
     Optmize:
@@ -21,6 +22,8 @@ public class CoinChangeWays {
 
 
     }
+
+
     public static int numberOfWays(int coins[], int amount) {
 
         int [] dpArray = new int[amount+1];
